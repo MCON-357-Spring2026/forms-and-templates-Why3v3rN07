@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>TODO: Complete Part 1 and Part 4</h1>
+    <h1>{{ name | upper }}</h1>
+    <p>Welcome, {{ name | title}}!</p>
+    <p>Today is {{ today }}</p>
+    <p>Your number is: {{ number | round(2) }}</p>
 {% endblock %}
