@@ -11,19 +11,30 @@
                 <th>Name</th>
                 <th>Grade</th>
                 <th>Comment</th>
+                <th> </th>
             </tr>
 
-            {% for student in students %}
+            {% for name, grade in students.items() %}
                 <tr>
-                    <td>{{ student.name }}</td>
-                    <td>{{ student.grade }}</td>
+                    <td>{{ name }}</td>
+                    <td>{{ grade }}</td>
                     <td>
-                        <!-- TODO: Add conditional comments -->
+                        {% if grade >= 90 %}
+                            Excellent
+                        {% elif grade >= 70 %}
+                            Good
+                        {% elif grade >= 60 %}
+                            Passing
+                        {% else %}
+                            Needs Improvement
+                        {% endif %}
                     </td>
+                    <td><a href="/delete/{{ name }}">Delete</a></td>
                 </tr>
             {% endfor %}
-
         </table>
+        <br>
+        <a href="/students/sort">Sort by grade</a>
     {% endif %}
 
 {% endblock %}

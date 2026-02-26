@@ -9,12 +9,14 @@
 
     <form method="POST">
         <label>Name:</label>
-        <input type="text" name="name"><br><br>
+        <input type="text" name="name" value="{{ name | default("") }}"><br><br>
 
         <label>Grade:</label>
-        <input type="text" name="grade"><br><br>
+        <input type="text" name="grade" value="{{ grade | default("") }}"><br><br>
 
         <input type="submit" value="Add Student">
+        <p>(If the student already exists, their grade will be updated.)</p>
+
     </form>
 
 {% endblock %}
