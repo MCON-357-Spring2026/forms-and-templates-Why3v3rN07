@@ -22,7 +22,7 @@ def students():
 
 @app.route("/grades")
 def grades():
-    grade = 95
+    grade = 75
     return render_template("grades.html", grade=grade)
 
 
